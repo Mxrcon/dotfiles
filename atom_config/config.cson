@@ -1,0 +1,13 @@
+"*":
+  core:
+    themes: [
+      "nv-dark-ui"
+      "paraiso-black"
+    ]
+  editor:
+    fontFamily: "CodeNewRoman Nerd Font mono"
+    fontSize: 15
+    showIndentGuide: true
+    tabLength: 3
+  "exception-reporting":
+    userId: "d1e5f787-ec96-4bdf-b3b3-19fb1431a844"
