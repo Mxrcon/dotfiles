@@ -1,2 +1,2 @@
-# prog_config
-some app configs that i use
+# .files
+some dot files that I use and I'd like to share
