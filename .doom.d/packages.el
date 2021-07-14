@@ -51,4 +51,3 @@
 (package! nextflow-mode :recipe (:host github :repo "emiller88/nextflow-mode"))
 (package! groovy-mode)
 (package! cl-lib)
-(package! wakatime-mode)

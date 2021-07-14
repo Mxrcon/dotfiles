@@ -101,7 +101,3 @@
 (map! :after magit "C-c C-g" #'magit-status)
 
 ;; OTHER STUFF
-
-(global-wakatime-mode +1)
-(setq wakatime-api-key "2123cc0b-c8c8-4724-8a2b-8e882299bf7f")
-(setq wakatime-cli-path "/home/davim/miniconda3/bin/wakatime")
