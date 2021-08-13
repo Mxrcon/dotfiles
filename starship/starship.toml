@@ -5,16 +5,26 @@ add_newline = true
 [username]
 style_user = "yellow"
 style_root = "black bold"
-format = " [$user]($style) on"
+format = " [@$user]($style) on"
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-format =  " [$hostname](bold blue)"
+format =  " [$hostname](bold blue) "
 trim_at = "."
 disabled = false
 
+[shell]
+powershell_indicator = "[pwsh](blue)"
+bash_indicator = "[bash](yellow)"
+unknown_indicator = "mystery shell"
+disabled = false
+
+[shlvl]
+disabled = false
+format = "$shlvl level(s) down"
+threshold = 3
 
 [character]
 success_symbol = "[>](green) "
@@ -23,7 +33,7 @@ error_symbol = "[<](red) "
 
 [directory]
 read_only = "  "
-truncation_symbol = "\n ../"
+truncation_symbol = " ../"
 
 [time]
 disabled = false
@@ -46,7 +56,7 @@ discharging_symbol = ""
 [conda]
 symbol = " "
 
-[docker]
+[docker_context]
 symbol = " "
 
 [dotnet]
@@ -62,14 +72,11 @@ symbol = " "
 [git_branch]
 symbol = " "
 style = "bold purple"
-format ="\n [$symbol$branch ]($style)"
+format ="-- [$symbol$branch ]($style)"
 
 
 [golang]
 symbol = " "
-
-[haskell]
-symbol = " "
 
 [hg_branch]
 symbol = " "
