@@ -25,9 +25,12 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'dracula )
-;; (setq doom-theme 'doom-outrun-electric )
+;;  (setq doom-theme 'doom-laserwave)
+;; (setq doom-theme 'doom-challenger-deep)
+;; (setq doom-theme 'dracula )
+ (setq doom-theme 'doom-outrun-electric )
 ;; MAYBE (setq doom-theme 'shades-of-purple )
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
@@ -130,23 +133,10 @@
               ("INATIVE" :foreground "gray" :weight bold)
               ("CANCELLED" :foreground "red" :weight bold)
               ("MEETING" :foreground "yellow" :weight bold))))
-;; I use C-c c to start capture mode
-(global-set-key (kbd "C-c c") 'org-capture)
-
-;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
-(setq org-capture-templates
-      (quote (("t" "todo" entry (file "~/Documents/org-notes/agenda.org")
-               "* TODO %?\nCreated on:%U\n%a\n")
-              ("n" "note" entry (file "~/Documents/org-notes/agenda.org")
-               "* %? :NOTE:\n%U\n%a\n")
-              ("j" "Journal" entry (file+datetree "~/Documents/org-notes/diary.org")
-               "* %?\n%U\n")
-              ("w" "org-protocol" entry (file "~/Documents/org-notes/agenda.org")
-               "* MEETING with %? :MEETING:\n SCHEDULED:")
-              ("h" "Habit" entry (file "~/Documents/org-notes/agenda.org")
-               "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
 
 (setq org-log-done 'time
       org-ellipsis " ▾ ")
 )
 
+;; gcal
+;; OTHER STUFF
