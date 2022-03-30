@@ -5,17 +5,17 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'megantiu/true.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'gyim/vim-boxdraw'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
-Plug 'WolfgangMehner/vim-plugins'
-Plug 'matze/vim-tex-fold'
-
-" Syntax related
+"Plug 'yuttie/comfortable-motion.vim'
 Plug 'Mxrcon/nextflow-vim'
+Plug 'WolfgangMehner/vim-plugins'
 Plug 'vim-python/python-syntax'
 Plug 'lervag/vimtex'
-
+"Plug 'Konfekt/FastFold'
+Plug 'matze/vim-tex-fold'
 " UI related
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
@@ -24,7 +24,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 " syntax check
 Plug 'w0rp/ale'
-
+" Autocomplete
+"Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+"Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+"Plug 'ncm2/ncm2-jedi'
 
 
 call plug#end()
@@ -42,7 +47,7 @@ let g:NERDTreeShowHidden = 1
   let g:NERDTreeMinimalUI = 1
   let g:NERDTreeIgnore = []
   let g:NERDTreeStatusline = ''
-" Automaticaly close nvim if NERDTree is only thing left open
+  " Automaticaly close nvim if NERDTree is only thing left open
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   nnoremap <silent> <A-b> :NERDTreeToggle<CR>
 " keymaps
