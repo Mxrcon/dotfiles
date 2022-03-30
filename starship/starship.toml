@@ -23,8 +23,8 @@ disabled = false
 
 [shlvl]
 disabled = false
-format = "$shlvl level(s) down"
-threshold = 3
+format = "[$symbol$shlvl]($style) "
+threshold = 2
 
 [character]
 success_symbol = "[>](green) "
@@ -54,7 +54,9 @@ charging_symbol = ""
 discharging_symbol = ""
 
 [conda]
+ignore_base = false
 symbol = " "
+format = "[$symbol$environment](dimmed green) "
 
 [docker_context]
 symbol = " "
