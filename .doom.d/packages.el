@@ -45,19 +45,18 @@
 ;; release. The `unpin!' macro allows you to unpin single packages...
 ;(unpin! pinned-package)
 ;; ...or multiple packages
-;(unpin! pinned-package another-pinned-package
+;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+
+
 (package! nextflow-mode :recipe (:host github :repo "emiller88/nextflow-mode"))
 (package! powershell.el :recipe (:host github :repo "jschaf/powershell.el"))
 (package! groovy-mode)
-(package! todoist)
 (package! pdf-tools)
-(package! cl-lib)
-(package! org-fancy-priorities)
 (package! origami)
 (package! dracula-theme)
-(package! org-super-agenda)
 (package! org-github-issues :recipe (:host github :repo "iensu/org-github-issues"))
 (package! mu4e-dashboard :recipe (:host github :repo "rougier/mu4e-dashboard"))
 (package! shades-of-purple-theme)
