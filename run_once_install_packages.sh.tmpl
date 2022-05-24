@@ -60,16 +60,14 @@ then
   echo 'Installing doom emacs'
   sudo add-apt-repository ppa:kelleyk/emacs
   sudo apt-get update
-  sudo apt-get install emacs27
-     ripgrep \
-     fd-find -y
+  sudo apt-get install emacs27 ripgrep fd-find -y
 
   git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-  ~/.emacs.d/bin/doom install
+  bash ~/.emacs.d/bin/doom install
 else
   echo "doom emacs already installed"
 
-~/.emacs.d/bin/doom sync
+bash ~/.emacs.d/bin/doom sync
 
 # install other softwares
 # github cli
@@ -81,7 +79,7 @@ else
 # important stuff
 sudo apt get install htop neofetch sqlite pandoc csvkit rich powershell -y
 pip3 install rich-cli
-curl -sS https://starship.rs/install.sh | sh
+curl -sS "https://starship.rs/install.sh" | sh
 
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
