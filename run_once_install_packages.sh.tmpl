@@ -16,7 +16,7 @@
 if ! [ -x "$(command -v nvim)" ]
 then
   echo 'Installing neovim'
-  sudo apt-get install nvim --y
+  sudo apt-get install neovim --y
   nvim +":PlugInstall" -"qa"
 else
   echo 'nvim already installed'
