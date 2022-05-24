@@ -52,7 +52,7 @@ then
   curl -s https://get.nextflow.io | bash
 else
   echo "nextflow already installed"
-
+fi
 #Install doom emacs:
 
 if ! [ -x "$(command -v ~/.emacs.d/bin/doom" ]
@@ -66,7 +66,7 @@ then
   bash ~/.emacs.d/bin/doom install
 else
   echo "doom emacs already installed"
-
+fi
 bash ~/.emacs.d/bin/doom sync
 
 # install other softwares
@@ -82,5 +82,3 @@ pip3 install rich-cli
 curl -sS https://starship.rs/install.sh | sh
 
 {{ end -}}
-
-echo "ok"
