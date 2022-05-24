@@ -15,7 +15,7 @@
 # Install nvim and packages
 if ! [ -x "$(command -v nvim)" ]
 then
-  echo 'Installing nvim'
+  echo 'Installing neovim'
   sudo apt-get install nvim
   nvim +":PlugInstall" -"qa"
 else
