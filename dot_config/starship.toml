@@ -1,0 +1,124 @@
+# ~/.config/starship.toml
+
+[username]
+style_user = "yellow"
+style_root = "black bold"
+format = " [@$user]($style) on"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format =  " [$hostname](bold blue) "
+trim_at = "."
+disabled = false
+
+[shell]
+powershell_indicator = "[pwsh](blue)"
+bash_indicator = "[bash](yellow)"
+unknown_indicator = "mystery shell"
+disabled = false
+
+[shlvl]
+disabled = false
+format = "[$symbol$shlvl]($style) "
+threshold = 2
+
+[character]
+success_symbol = "[👍>](green) "
+error_symbol = "[👎>](red) "
+
+
+[directory]
+read_only = "  "
+truncation_symbol = " ../"
+truncation_length = 5
+repo_root_style = "bold white"
+repo_root_format = "[$before_root_path]($style)[$repo_root  ]($repo_root_style)[$path]($style)[$read_only]($read_only_style) " 
+
+[time]
+disabled = false
+format = '[\[ $time \]]($style) '
+time_format = "%T"
+utc_time_offset = "-3"
+
+[cmd_duration]
+min_time = 1_000
+show_milliseconds = true
+
+[aws]
+symbol = " "
+
+[battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+
+[conda]
+ignore_base = true
+symbol = " "
+format = "[$symbol$environment](dimmed green) "
+
+[docker_context]
+symbol = " "
+
+[dotnet]
+symbol = " "
+format = "[$symbol$version( 什 $tfm)]($style) "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format ="-- [$symbol$branch ]($style)"
+
+[git_commit]
+disabled = false
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+	[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+python_binary = "python3"
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[rlang]
+symbol = "R "
