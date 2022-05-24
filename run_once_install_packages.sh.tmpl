@@ -1,0 +1,87 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+
+# Install example
+# src: https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script
+#if ! [ -x "$(command -v git)" ]
+#then
+#  echo 'Error: git is not installed.' >&2
+#  exit 1
+#else
+#  echo "git already installed"
+#fi
+
+
+# Install nvim and packages
+if ! [ -x "$(command -v nvim)" ]
+then
+  echo 'Installing nvim'
+  sudo apt-get install nvim
+  nvim +":PlugInstall" -"qa"
+else
+  echo 'nvim already installed'
+fi
+
+# Install miniconda3 and them mamba
+
+if ! [ -x "$(command -v conda)" ]
+then
+# src:https://github.com/phargogh/dotfiles-chezmoi/blob/main/run_once_install-packages.sh.tmpl
+  echo 'Installing conda'
+  MINICONDA_FILE=Miniconda3-py39_4.9.2-Linux-x86_64.sh
+  wget https://repo.anaconda.com/miniconda/$MINICONDA_FILE
+ # check the SHA256sum of Miniconda before executing.
+  echo "536817d1b14cb1ada88900f5be51ce0a5e042bae178b5550e62f61e223deae7c $MINICONDA_FILE" | sha256sum --check || exit 1  
+  bash $MINICONDA_FILE --y
+ # init conda and add channels
+  conda init
+  conda config --add channels conda-forge
+  conda config --add channels bioconda
+ # install mamba
+  conda install mamba -c conda-forge
+else
+  echo "conda already installed"
+fi
+
+
+# Install nextflow
+
+if ! [ -x "$(command -v nextflow)" ]
+then
+  echo 'installing nextflow'
+  curl -s https://get.nextflow.io | bash
+else
+  echo "nextflow already installed"
+
+#Install doom emacs:
+
+if ! [ -x "$(command -v ~/.emacs.d/bin/doom" ]
+then
+  echo 'Installing doom emacs'
+  sudo add-apt-repository ppa:kelleyk/emacs
+  sudo apt-get update
+  sudo apt-get install emacs27
+     ripgrep \
+     fd-find
+
+  git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+  ~/.emacs.d/bin/doom install
+else
+  echo "doom emacs already installed"
+
+~/.emacs.d/bin/doom sync
+
+# install other softwares
+# github cli
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+sudo apt update
+sudo apt install gh
+
+# important stuff
+sudo apt get install htop neofetch sqlite pandoc csvkit rich powershell
+pip3 install rich-cli
+
+{{ else if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+{{ end -}}
