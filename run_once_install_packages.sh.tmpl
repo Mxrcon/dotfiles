@@ -16,7 +16,7 @@
 if ! [ -x "$(command -v nvim)" ]
 then
   echo 'Installing neovim'
-  sudo apt-get install neovim --y
+  sudo apt-get install neovim -y
   nvim +":PlugInstall" -"qa"
 else
   echo 'nvim already installed'
@@ -32,7 +32,7 @@ then
   wget https://repo.anaconda.com/miniconda/$MINICONDA_FILE
  # check the SHA256sum of Miniconda before executing.
   echo "536817d1b14cb1ada88900f5be51ce0a5e042bae178b5550e62f61e223deae7c $MINICONDA_FILE" | sha256sum --check || exit 1  
-  bash $MINICONDA_FILE --y
+  bash $MINICONDA_FILE
  # init conda and add channels
   conda init
   conda config --add channels conda-forge
@@ -62,7 +62,7 @@ then
   sudo apt-get update
   sudo apt-get install emacs27
      ripgrep \
-     fd-find --y
+     fd-find -y
 
   git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
   ~/.emacs.d/bin/doom install
@@ -76,10 +76,10 @@ else
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 sudo apt update
-sudo apt install gh --y
+sudo apt install gh -y
 
 # important stuff
-sudo apt get install htop neofetch sqlite pandoc csvkit rich powershell --y
+sudo apt get install htop neofetch sqlite pandoc csvkit rich powershell -y
 pip3 install rich-cli
 curl -sS https://starship.rs/install.sh | sh
 
